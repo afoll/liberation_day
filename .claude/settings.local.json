@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m nbconvert:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
