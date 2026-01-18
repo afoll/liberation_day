@@ -1,0 +1,59 @@
+## Project Overview
+Create a Jupyter notebook analyzing U.S. manufacturing employment trends before and after the "Liberation Day" tariffs announced April 2, 2025. This will be published on GitHub for public consumption and potentially shared on r/dataisbeautiful.
+
+## Data Requirements
+- **Primary source**: Bureau of Labor Statistics (BLS) Current Employment Statistics (CES)
+  - Series: Manufacturing employment (CES3000000001)
+  - Use the BLS Public Data API (https://api.bls.gov/publicAPI/v2/)
+- **Time range**: Minimum 10 years (2015-present), monthly frequency
+- Pull data programmatically—no manual CSV downloads
+- Include API registration if needed (or use the unregistered tier with appropriate rate limiting)
+
+## Technical Stack
+- Python 3.11+
+- Core packages: pandas, matplotlib, requests (or httpx)
+- Optional: seaborn, plotly for iteration
+- Environment: requirements.txt or pyproject.toml for reproducibility
+
+## Notebook Structure
+1. **Setup & Configuration**: imports, API keys (via environment variables), constants
+2. **Data Acquisition**: API calls with error handling, caching raw responses locally
+3. **Data Cleaning & Transformation**: minimal, documented transformations
+4. **Exploratory Analysis**: quick summary stats, identify any data quality issues
+5. **Visualization Iteration**: try 3-5 different approaches to find the clearest narrative
+6. **Final Visualization**: publication-ready chart
+7. **Methodology Notes**: brief section documenting data sources, limitations, decisions
+
+## Visualization Requirements
+- **Final output**: static PNG at 1080x1350px (4:5 ratio, optimal for mobile/Instagram)
+- Mark April 2, 2025 clearly as "Liberation Day" event line
+- Consider: YoY change vs. absolute levels, seasonally adjusted vs. not, index to baseline
+- Minimal chartjunk—clean, modern aesthetic (think NYT/Economist style)
+- Colorblind-friendly palette
+- Self-contained: title, subtitle with takeaway, source citation, date pulled
+
+## Code Quality Standards
+- Clear, concise comments explaining "why" not "what"
+- Functions for reusable operations (API calls, plotting)
+- No hardcoded paths—use pathlib and relative paths
+- Seed random operations if any
+- Git-ready: include .gitignore (exclude API keys, cache files, __pycache__)
+
+## Iteration Guidance
+The goal is finding the "honest" view—not cherry-picking. Try visualizations that would show an effect AND those that might obscure one:
+- Raw employment levels
+- Month-over-month % change
+- Year-over-year % change  
+- Indexed to Jan 2025 = 100
+- Deviation from pre-tariff trend line
+
+Then select whichever tells the clearest, most defensible story.
+
+## Deliverables
+1. `manufacturing_tariffs_analysis.ipynb` - main notebook
+2. `requirements.txt` - dependencies
+3. `README.md` - project description, how to run, data sources
+4. `figures/` - final PNG output
+5. `.gitignore` - standard Python + project-specific exclusions
+
+Start by setting up the project structure and pulling the BLS data. Show me the raw data before proceeding to visualization.
